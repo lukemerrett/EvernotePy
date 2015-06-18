@@ -1,9 +1,13 @@
 __author__ = 'Luke Merrett'
 
-import settings
+from cmdline.cmdlineparser import CmdLineParser
 from evernoteclient.operations import EvernoteOperations
 
-if __name__=="__main__":
+if __name__ == "__main__":
+    parser = CmdLineParser()
     operations = EvernoteOperations()
 
-    operations.print_list_of_notebooks()
+    args = parser.parse_args()
+
+    if args.list_notebooks:
+        operations.print_list_of_notebooks()
