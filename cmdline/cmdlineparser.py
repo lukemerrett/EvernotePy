@@ -8,11 +8,10 @@ class CmdLineParser:
     def __init__(self):
         parser = argparse.ArgumentParser()
 
-        # store_true means we don't expect this flag key to come with a value
         parser.add_argument(
             '--list-notebooks', '-ln',
-            dest='list_notebooks',
-            action='store_true',
+            dest='list_notebooks',  # Result stored in a variable of this name
+            action='store_true',  # Means we don't expect this flag key to come with a value
             help='Lists the current notebooks')
 
         self.__parser = parser
