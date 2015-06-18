@@ -11,3 +11,6 @@ if __name__ == "__main__":
 
     if args.list_notebooks:
         operations.print_list_of_notebooks()
+
+    if args.create_note:
+        operations.create_new_note(args.create_note[0], args.create_note[1])

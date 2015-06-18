@@ -9,10 +9,19 @@ class CmdLineParser:
         parser = argparse.ArgumentParser()
 
         parser.add_argument(
-            '--list-notebooks', '-ln',
+            '-ln', '--list-notebooks',
             dest='list_notebooks',  # Result stored in a variable of this name
             action='store_true',  # Means we don't expect this flag key to come with a value
-            help='Lists the current notebooks')
+            help='Lists the current notebooks'
+        )
+
+        parser.add_argument(
+             '-c', '--create-note',
+            dest="create_note",
+            nargs=2,
+            help='Creates a new note',
+            metavar=('"Title"', '"Body"')
+        )
 
         self.__parser = parser
 

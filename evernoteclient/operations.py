@@ -20,16 +20,21 @@ class EvernoteOperations:
         note_store = self.__client.get_note_store()
         return note_store.listNotebooks()
 
-    def create_new_note(self, title, body, notebook_guid):
+    def create_new_note(self, title, body, *notebook_guid):
         note_store = self.__client.get_note_store()
 
         note = Types.Note()
         note.title = title
-        note.notebookGuid = notebook_guid
+        if notebook_guid:
+            note.notebookGuid = notebook_guid
 
         self.__write_note_content(note, body)
 
-        return note_store.createNote(note)
+        created_note = note_store.createNote(note)
+
+        print('New note created')
+
+        return created_note
 
     @staticmethod
     def __write_note_content(note, body):
