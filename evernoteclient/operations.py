@@ -32,7 +32,7 @@ class EvernoteOperations:
 
         created_note = note_store.createNote(note)
 
-        print('New note created')
+        print('"' + title + '" note has been created')
 
         return created_note
 
