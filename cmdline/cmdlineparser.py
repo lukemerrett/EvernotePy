@@ -16,7 +16,7 @@ class CmdLineParser:
         )
 
         parser.add_argument(
-             '-c', '--create-note',
+            '-c', '--create-note',
             dest="create_note",
             nargs=2,
             help='Creates a new note',
